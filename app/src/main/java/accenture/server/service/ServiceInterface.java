@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 public interface ServiceInterface<T, I extends Serializable> {
 
   EntityManagerFactory emf =
-      Persistence.createEntityManagerFactory("accenture.server.hibernat");
+      Persistence.createEntityManagerFactory("accenture.server.hibernate");
 
   void save(T s);
 

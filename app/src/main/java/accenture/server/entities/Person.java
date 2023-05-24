@@ -1,5 +1,7 @@
 package accenture.server.hibernate.entity;
 
+import javax.persistence.Entity;
+
 @Entity
 public class Person {
 	private String cpf;

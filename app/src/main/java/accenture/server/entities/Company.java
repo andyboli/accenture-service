@@ -16,7 +16,7 @@ public class Company {
 	private String name;
 	private String mail;
 	
-	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
 	private List<Supplier> suppliers;
 
 	public Company() {

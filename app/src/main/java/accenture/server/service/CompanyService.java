@@ -10,18 +10,13 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 public class CompanyService implements ServiceInterface<Company, Long> {
-  private EntityManagerFactory emf;
-
-  public CompanyService() {
-    super();
-    this.emf = ServiceInterface.emf;
-  }
+  private EntityManagerFactory emf = ServiceInterface.emf;
 
   @Override
   public void save(Company company) {
     EntityManager em = this.emf.createEntityManager();
     em.getTransaction().begin();
-    em.persist(Company);
+    em.persist(company);
     em.getTransaction().commit();
     em.close();
   }
@@ -30,7 +25,7 @@ public class CompanyService implements ServiceInterface<Company, Long> {
   public void update(Company company) {
     EntityManager em = this.emf.createEntityManager();
     em.getTransaction().begin();
-    em.merge(Company);
+    em.merge(company);
     em.getTransaction().commit();
     em.close();
   }
@@ -48,11 +43,11 @@ public class CompanyService implements ServiceInterface<Company, Long> {
   @Override
   public List<Company> list() {
     EntityManager em = this.emf.createEntityManager();
-    CriteriaBuilder cb = em.getCriteriaBuilder();
-    CriteriaQuery<Company> cq = cb.createQuery(Company.class);
-    Root<Company> rootEntry = cq.from(Company.class);
-    CriteriaQuery<Company> all = cq.select(rootEntry);
-    TypedQuery<Company> allQuery = em.createQuery(all);
+    CriteriaBuilder builder = em.getCriteriaBuilder();
+    CriteriaQuery<Company> query = builder.createQuery(Company.class);
+    Root<Company> rootEntry = query.from(Company.class);
+    query.select(rootEntry);
+    TypedQuery<Company> allQuery = em.createQuery(query);
     return allQuery.getResultList();
   }
 

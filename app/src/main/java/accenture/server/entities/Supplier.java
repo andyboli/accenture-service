@@ -1,6 +1,7 @@
 package accenture.server.hibernate.entity;
 
-import javax.persistence.Columns;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 @Entity
 public class Supplier {
