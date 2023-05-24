@@ -21,6 +21,9 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
     implementation("org.hibernate:hibernate-core:6.2.3.Final")
+    implementation("mysql:mysql-connector-java:8.0.11")
+    implementation("javax.persistence:persistence-api:1.0")
+    implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final")
 }
 
 testing {
