@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
+    implementation("org.hibernate:hibernate-core:6.2.3.Final")
 }
 
 testing {
