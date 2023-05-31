@@ -46,5 +46,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("accenture.service.App")
+    mainClass.set("accenture.server.App")
 }

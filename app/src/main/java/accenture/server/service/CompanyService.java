@@ -1,7 +1,7 @@
 package accenture.server.service;
 
 import accenture.server.hibernate.entity.Company;
-import java.util.List;
+import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
@@ -41,14 +41,15 @@ public class CompanyService implements ServiceInterface<Company, Long> {
   }
 
   @Override
-  public List<Company> list() {
-    EntityManager em = this.emf.createEntityManager();
-    CriteriaBuilder builder = em.getCriteriaBuilder();
-    CriteriaQuery<Company> query = builder.createQuery(Company.class);
-    Root<Company> rootEntry = query.from(Company.class);
-    query.select(rootEntry);
-    TypedQuery<Company> allQuery = em.createQuery(query);
-    return allQuery.getResultList();
+  public ArrayList<Company> list() {
+//    EntityManager em = this.emf.createEntityManager();
+//    CriteriaBuilder builder = em.getCriteriaBuilder();
+//    CriteriaQuery<Company> query = builder.createQuery(Company.class);
+//    Root<Company> rootEntry = query.from(Company.class);
+//    query.select(rootEntry);
+//    TypedQuery<Company> allQuery = em.createQuery(query);
+//    return allQuery.getResultList();
+	  return new ArrayList<Company>();
   }
 
   @Override
